@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_test/swap_boxes.dart';
+import 'package:flutter_architecture_test/inherited_widget_test.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,6 +59,26 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.swap_horiz),
               label: Text('Widget key测试 交换盒子示例'),
               style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                textStyle: TextStyle(fontSize: 16),
+              ),
+            ),
+            SizedBox(height: 16),
+            // 跳转到 InheritedWidget 测试页面的按钮
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => InheritedWidgetTestPage(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.extension),
+              label: Text('InheritedWidget 测试'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.purple,
+                foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 textStyle: TextStyle(fontSize: 16),
               ),
