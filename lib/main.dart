@@ -3,6 +3,8 @@ import 'package:flutter_architecture_test/swap_boxes.dart';
 import 'package:flutter_architecture_test/inherited_widget_test.dart';
 import 'package:flutter_architecture_test/provider_test/provider_test_page.dart';
 import 'package:flutter_architecture_test/getx_test/getx_test_page.dart';
+import 'package:flutter_architecture_test/radar_chart_page.dart';
+import 'package:flutter_architecture_test/line_chart_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -120,6 +122,46 @@ class _MyHomePageState extends State<MyHomePage> {
               label: Text('GetX 状态管理测试'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                textStyle: TextStyle(fontSize: 16),
+              ),
+            ),
+            SizedBox(height: 16),
+            // 跳转到雷达图页面的按钮
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RadarChartPage(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.pie_chart),
+              label: Text('雷达图示例'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepOrange,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                textStyle: TextStyle(fontSize: 16),
+              ),
+            ),
+            SizedBox(height: 16),
+            // 跳转到折线图页面的按钮
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LineChartPage(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.show_chart),
+              label: Text('折线图示例'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.indigo,
                 foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 textStyle: TextStyle(fontSize: 16),
