@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_test/swap_boxes.dart';
 import 'package:flutter_architecture_test/inherited_widget_test.dart';
+import 'package:flutter_architecture_test/provider_test/provider_test_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,6 +79,26 @@ class _MyHomePageState extends State<MyHomePage> {
               label: Text('InheritedWidget 测试'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purple,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                textStyle: TextStyle(fontSize: 16),
+              ),
+            ),
+            SizedBox(height: 16),
+            // 跳转到 Provider 测试页面的按钮
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProviderTestPage(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.storage),
+              label: Text('Provider 状态管理测试'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 textStyle: TextStyle(fontSize: 16),
